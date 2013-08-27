@@ -23,7 +23,8 @@
 usage="Usage: start-dfs.sh [-upgrade|-rollback] [other options such as -clusterId]"
 
 bin=`dirname "${BASH_SOURCE-$0}"`
-bin=`cd "$bin"; pwd`
+#add -L option for pwd to avoid side effects
+bin=`cd "$bin"; pwd -L`
 
 DEFAULT_LIBEXEC_DIR="$bin"/../libexec
 HADOOP_LIBEXEC_DIR=${HADOOP_LIBEXEC_DIR:-$DEFAULT_LIBEXEC_DIR}
